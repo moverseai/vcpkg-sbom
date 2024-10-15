@@ -10,6 +10,7 @@ import re
 import typing
 
 import rich
+import rich.progress
 import spdx_tools.spdx.document_utils
 import spdx_tools.spdx.model as spdx
 import spdx_tools.spdx.parser.parse_anything
@@ -21,7 +22,7 @@ import toolz
 
 
 # NOTE: from https://github.com/Textualize/rich/discussions/482
-class TableProgress(rich.Progress):
+class TableProgress(rich.progress.Progress):
     def __init__(self, table_max_rows: int, name: str, *args, **kwargs) -> None:
         self.results = collections.deque(maxlen=table_max_rows)
         self.name = name

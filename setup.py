@@ -29,23 +29,24 @@ def get_requirements():
 
 
 PACKAGE_NAME = "vcpkg-sbom"
-VERSION = "0.0.5"
+VERSION = "0.0.6"
 AUTHOR = "Moverse P.C."
 EMAIL = "info@moverse.ai"
 LICENSE = "MIT"
 URL = "https://github.com/moverseai/vcpkg-sbom/"
 CODE_URL = "https://github.com/moverseai/vcpkg-sbom/"
 DOCS_URL = "https://github.com/moverseai/vcpkg-sbom/"
-DESCRIPTION = "A python CLI tool to extract a software bill of materials and license info from a vcpkg manifest."
+DESCRIPTION = "A python CLI tool to extract a merged software bill of materials and license info from a vcpkg manifest."
 KEYWORDS = [
-    "vcpkg",
+    "software-bill-of-materials",
+    "developer-tools",
     "sbom",
     "spdx",
+    "vcpkg",
     "license",
     "eula",
     "cpp",
     "c++",
-    "software-bill-of-materials",
     "dependencies",
     "oss",
 ]
@@ -79,14 +80,21 @@ if __name__ == "__main__":
             ],
         },
         classifiers=[
-            "Development Status :: 4 - Beta",
+            "Development Status :: 3 - Alpha",
             "Intended Audience :: Developers",
             "Intended Audience :: Science/Research",
             "Programming Language :: Python :: 3.8",
+            "Programming Language :: Python :: 3.9",
+            "Programming Language :: Python :: 3.10",
+            "Programming Language :: Python :: 3.11",
+            "Programming Language :: Python :: 3.12",
             "License :: OSI Approved :: MIT License",
             "Operating System :: Microsoft :: Windows",
             "Operating System :: POSIX :: Linux",
+            "Topic :: Software Development",
             "Topic :: Software Development :: Libraries",
-            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Software Development :: Build Tools",
+            "Topic :: System :: Software Distribution",
+            "Environment :: Console",
         ],
     )

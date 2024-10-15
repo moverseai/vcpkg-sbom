@@ -15,8 +15,6 @@
 
 ___
 
-<!-- [![Downloads](https://static.pepy.tech/badge/rerun-animation/month)](https://pepy.tech/project/rerun-animation) -->
-
 >A python command line tool to extract a combined software bill of materials and license info from a vcpkg manifest.
 
 ## Installation
@@ -125,6 +123,7 @@ options:
 - The merging code was adapted from https://github.com/philips-software/SPDXMerge
 - The `jq` script [here](https://edgebit.io/blog/merge-two-sboms/) is a nice alternative
 - [licensecpp](https://github.com/cenit/licencpp/tree/master) is another approach starting from the `vcpkg` manifest.json file.
+- [spdx docs](https://spdx.github.io/spdx-spec)
 
 ## Disclaimer / Limitations
 

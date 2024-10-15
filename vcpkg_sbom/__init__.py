@@ -10,6 +10,7 @@ import re
 import typing
 
 import rich
+import rich.panel
 import rich.progress
 import spdx_tools.spdx.document_utils
 import spdx_tools.spdx.model as spdx
@@ -137,13 +138,14 @@ def _add_licenses(
                 os.linesep,
                 "*" * 80,
                 os.linesep,
+                "\t" * 5,
                 pkg_name,
                 os.linesep,
                 "*" * 80,
                 os.linesep,
             ]
         )
-        with open(license_path, "r") as f:
+        with open(license_path, "r", errors="ignore") as f:
             writer.write(f.read())
         pbar.update(task, advance=1)
 
@@ -176,7 +178,7 @@ def _parse_args():
         "-n",
         "--namespace",
         type=str,
-        default="spdx.org/spdxdocs",
+        default="https://spdx.org/spdxdocs/",
         help="The software's namespace to use for the `spdx` file.",
     )
     parser.add_argument(
@@ -211,6 +213,11 @@ def _parse_args():
 def run():
     args = _parse_args()
     vcpkg_triplet_path = pathlib.Path(args.vcpkg_root) / pathlib.Path(args.triplet)
+    if not os.path.exists(vcpkg_triplet_path):
+        rich.print(
+            f"Manifest path [[cyan italic]{vcpkg_triplet_path}[/cyan italic]] [red][bold]does not[/bold] exist[/red], exiting."
+        )
+        exit(-1)
 
     spdx_json_paths = set()
     for spdx_json_path in vcpkg_triplet_path.glob("**/share/**/*.spdx.json"):

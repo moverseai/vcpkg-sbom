@@ -19,6 +19,7 @@ import spdx_tools.spdx.validation
 import spdx_tools.spdx.validation.uri_validators
 import spdx_tools.spdx.writer.write_anything
 import toolz
+from rich.table import Table as RichTable
 
 
 # NOTE: from https://github.com/Textualize/rich/discussions/482
@@ -32,7 +33,7 @@ class TableProgress(rich.progress.Progress):
     def update_table(self, result: typing.Optional[typing.Tuple[str]] = None):
         if result is not None:
             self.results.append(result)
-        table = rich.Table()
+        table = RichTable()
         table.add_column("ID")
         table.add_column(self.name, width=80)
 

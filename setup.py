@@ -29,7 +29,7 @@ def get_requirements():
 
 
 PACKAGE_NAME = "vcpkg-sbom"
-VERSION = "0.0.3"
+VERSION = "0.0.4"
 AUTHOR = "Moverse P.C."
 EMAIL = "info@moverse.ai"
 LICENSE = "MIT"

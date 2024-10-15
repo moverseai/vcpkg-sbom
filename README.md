@@ -63,11 +63,9 @@ vcpkg-sbom PATH/TO/PROJECT/vcpkg_installed
 | 2  | package name #3 |
 | ... | package name #N |
 
-Merging spdx:  ━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-
-Extracting & merging copyrights ...      
-
-Merging copyrights:  ━━━━━━━━━━━━━━━━━━   0% -:--:--
+> Merging spdx:  ━━━━━━━━━━━━━━━━━━ 100% 0:00:00   
+> Extracting & merging copyrights ...    
+> Merging copyrights:  ━━━━━━━━━━━━━━━━━━   0% -:--:--
 
 > [!NOTE]  
 > The output file is a `SPDX-2.3` `SPDXRef-DOCUMENT` that merges all available `*.spdx.json` files from the manifest's installed packages.
